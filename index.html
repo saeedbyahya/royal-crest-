@@ -211,6 +211,14 @@ section{padding:120px 40px;}
 .cf-submit:hover{background:var(--gold-light);}
 .cf-note{font-size:0.62rem;color:rgba(255,255,255,0.2);text-align:center;margin-top:12px;letter-spacing:0.06em;}
 
+/* ── WHATSAPP ── */
+.whatsapp-float{position:fixed;bottom:28px;right:28px;z-index:999;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.5);transition:transform 0.2s,box-shadow 0.2s;animation:waPulse 2s infinite;}
+.whatsapp-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.7);}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.5);}50%{box-shadow:0 4px 32px rgba(37,211,102,0.8);}}
+.whatsapp-float-label{position:fixed;bottom:38px;right:96px;z-index:998;background:#25D366;color:#fff;padding:6px 14px;border-radius:20px;font-size:0.72rem;font-weight:600;letter-spacing:0.05em;box-shadow:0 2px 10px rgba(0,0,0,0.2);white-space:nowrap;}
+.btn-whatsapp{display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;padding:15px 32px;font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:all 0.25s;margin-top:16px;border-radius:2px;}
+.btn-whatsapp:hover{background:#20ba5a;transform:translateY(-1px);}
+
 /* ── FOOTER ── */
 footer{background:var(--obsidian);border-top:1px solid var(--gold-border);padding:36px 40px;}
 .footer-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
@@ -235,12 +243,93 @@ footer{background:var(--obsidian);border-top:1px solid var(--gold-border);paddin
   .floor-tabs{flex-wrap:wrap;}
   .ftab{border-right:1px solid var(--gold-border);}
   .cf-grid{grid-template-columns:1fr;}
+  .about-wrap{gap:48px;}
+  .contact-wrap{gap:48px;}
+  .h-stat{padding:0 20px;}
+  .hero-dividers{flex-wrap:wrap;gap:16px;}
+  .h-vr{display:none;}
 }
 @media(max-width:600px){
-  .fac-grid,.prox-grid{grid-template-columns:1fr;}
+  /* General */
+  body{font-size:15px;}
+  section{padding:60px 16px;}
+  .container{padding:0;}
+
+  /* Nav */
+  .nav-inner{padding:0 16px;height:64px;}
+  .nav-logo img{width:40px;height:40px;}
+  .logo-name{font-size:1.1rem;}
+  .logo-sub{font-size:0.5rem;letter-spacing:0.15em;}
+  .nav-cta{padding:7px 14px;font-size:0.65rem;letter-spacing:0.1em;}
+
+  /* Hero */
+  .hero-content{padding:80px 16px 40px;}
+  .hero-title{font-size:3rem;}
+  .hero-subtitle{font-size:0.95rem;}
+  .hero-overline{gap:8px;}
+  .overline-text{font-size:0.6rem;letter-spacing:0.15em;}
+  .hero-dividers{flex-wrap:wrap;gap:20px;justify-content:center;margin-bottom:36px;}
+  .h-vr{display:none;}
+  .h-stat{padding:0 16px;}
+  .h-stat-num{font-size:2rem;}
+  .h-stat-label{font-size:0.6rem;}
+  .hero-actions{flex-direction:column;align-items:center;gap:12px;}
+  .btn-gold,.btn-ghost{width:100%;max-width:280px;text-align:center;padding:14px 24px;}
+  .hero-corner{width:60px;height:60px;}
+
+  /* About */
+  .about-wrap{grid-template-columns:1fr;gap:32px;}
+  .sec-title{font-size:1.8rem;}
+  .feats{grid-template-columns:1fr;}
+  .feat:nth-child(2n){border-right:1px solid var(--stone);}
+  .feat:nth-last-child(-n+2){border-bottom:1px solid var(--stone);}
+  .feat:last-child{border-bottom:none;}
+  .hc-row{padding:12px 20px;}
+  .hc-top{padding:24px 20px;}
+  .hc-bottom{padding:16px 20px;}
+
+  /* Flats */
   .flats-grid{grid-template-columns:1fr;}
-  .hero-title{font-size:3.5rem;}
-  .h-stat{padding:0 24px;}
+  .floor-tabs{flex-wrap:wrap;}
+  .ftab{padding:8px 16px;font-size:0.65rem;}
+  .fc-areas{grid-template-columns:1fr 1fr;}
+  .area-num{font-size:1.3rem;}
+  .flats-head p{font-size:0.82rem;}
+
+  /* Facilities */
+  .fac-grid{grid-template-columns:1fr 1fr;}
+  .fac-item{padding:20px 16px;}
+  .fac-item:nth-child(2n){border-right:none;}
+  .fac-name{font-size:0.78rem;}
+  .fac-desc{font-size:0.68rem;}
+
+  /* Specifications */
+  .spec-layout{grid-template-columns:1fr;}
+  .spec-group{padding:24px 16px;}
+  .si-key{flex:0 0 110px;font-size:0.7rem;}
+  .si-val{font-size:0.7rem;}
+
+  /* Proximity */
+  .prox-grid{grid-template-columns:1fr 1fr;}
+  .prox-card{padding:20px 12px;}
+  .prox-name{font-size:0.75rem;}
+  .map-label{flex-direction:column;gap:8px;padding:14px 16px;}
+  .ml-address{font-size:0.75rem;}
+
+  /* Contact */
+  .contact-wrap{grid-template-columns:1fr;gap:32px;}
+  .contact-form-wrap{padding:24px 16px;}
+  .cf-grid{grid-template-columns:1fr;}
+  .cf-title{font-size:1.1rem;}
+  .cd-inner .cd-val{font-size:0.82rem;}
+
+  /* Footer */
+  .footer-inner{flex-direction:column;text-align:center;gap:12px;}
+  footer{padding:24px 16px;}
+  .footer-copy{font-size:0.62rem;}
+
+  /* Map */
+  iframe.map-frame{height:280px;}
 }
 </style>
 </head>
@@ -669,41 +758,57 @@ footer{background:var(--obsidian);border-top:1px solid var(--gold-border);paddin
             <div class="cd-val">Royal Constructions</div>
           </div>
         </div>
+        <a href="https://wa.me/919175997600?text=Hello%2C%20I%20am%20interested%20in%20Royal%20Crest%20Apartments.%20Please%20share%20more%20details." target="_blank" class="btn-whatsapp">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20"><path fill="#fff" d="M4.9 43.3l2.7-9.9C5.9 30.7 5 27.4 5 24 5 13.5 13.5 5 24 5s19 8.5 19 19-8.5 19-19 19c-3.3 0-6.4-.8-9.1-2.3L4.9 43.3z"/><path fill="#25D366" d="M24 7c-9.4 0-17 7.6-17 17 0 3.1.8 6 2.3 8.6L7 43l10.6-2.3C20 42.2 22 43 24 43c9.4 0 17-7.6 17-17S33.4 7 24 7z"/><path fill="#fff" d="M35.2 31.2c-.4 1.1-2.1 2.1-2.9 2.2-.8.1-1.5.4-5.1-1.1-4.3-1.7-7-6.1-7.2-6.4-.2-.3-1.7-2.3-1.7-4.4s1.1-3.1 1.5-3.5c.4-.4.8-.5 1.1-.5h.8c.3 0 .6.1.9.7.4.9 1.3 3.1 1.4 3.3.1.2.2.5 0 .8-.2.3-.3.5-.5.7-.2.2-.5.5-.3.9.2.4 1 1.7 2.2 2.8 1.5 1.3 2.7 1.8 3.1 2 .4.2.7.2.9-.1.3-.3 1.1-1.3 1.4-1.7.3-.4.6-.3 1-.1.4.2 2.6 1.2 3 1.4.4.2.7.3.8.5.1.2.1 1.2-.3 2.4z"/></svg>
+          WhatsApp Us Now
+        </a>
       </div>
       <div class="contact-form-wrap fi fi-d1">
         <div class="cf-title">Send an Enquiry</div>
         <div class="cf-sub">We'll respond within 24 hours</div>
-        <div class="cf-grid">
-          <div class="cf-row"><label>Your Name</label><input type="text" placeholder="Full name"/></div>
-          <div class="cf-row"><label>Phone</label><input type="tel" placeholder="+91 XXXXX XXXXX"/></div>
-        </div>
-        <div class="cf-row"><label>Email</label><input type="email" placeholder="you@email.com"/></div>
-        <div class="cf-row">
-          <label>Interested In</label>
-          <select>
-            <option value="">Select a residence</option>
-            <option>Flat 101 – Floor 1 · 1800 Sq Ft (Available)</option>
-            <option disabled>Flat 102 – Floor 1 · 1815 Sq Ft (Sold Out)</option>
-            <option>Flat 201 – Floor 2 · 1800 Sq Ft (Available)</option>
-            <option>Flat 202 – Floor 2 · 1815 Sq Ft (Available)</option>
-            <option>Flat 301 – Floor 3 · 1800 Sq Ft (Available)</option>
-            <option>Flat 302 – Floor 3 · 1815 Sq Ft (Available)</option>
-            <option>Flat 401 – Floor 4 · 1800 Sq Ft (Available)</option>
-            <option disabled>Flat 402 – Floor 4 · 1815 Sq Ft (Sold Out)</option>
-            <option>Flat 501 – Floor 5 · 1800 Sq Ft (Available)</option>
-            <option>Flat 502 – Floor 5 · 1815 Sq Ft (Available)</option>
-            <option>Any Available Residence</option>
-          </select>
-        </div>
-        <div class="cf-row"><label>Message</label><textarea placeholder="Any questions or preferred visit time…"></textarea></div>
-        <button class="cf-submit" onclick="handleSubmit(this)">Send Enquiry →</button>
-        <p class="cf-note">Your information is kept confidential</p>
+        <form action="https://formspree.io/f/mdarjrqb" method="POST" onsubmit="handleSubmit(event)">
+          <div class="cf-grid">
+            <div class="cf-row"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required/></div>
+            <div class="cf-row"><label>Phone</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required/></div>
+          </div>
+          <div class="cf-row"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required/></div>
+          <div class="cf-row">
+            <label>Interested In</label>
+            <select name="flat">
+              <option value="">Select a residence</option>
+              <option>Flat 101 – Floor 1 · 1800 Sq Ft (Available)</option>
+              <option disabled>Flat 102 – Floor 1 · 1815 Sq Ft (Sold Out)</option>
+              <option>Flat 201 – Floor 2 · 1800 Sq Ft (Available)</option>
+              <option>Flat 202 – Floor 2 · 1815 Sq Ft (Available)</option>
+              <option>Flat 301 – Floor 3 · 1800 Sq Ft (Available)</option>
+              <option>Flat 302 – Floor 3 · 1815 Sq Ft (Available)</option>
+              <option>Flat 401 – Floor 4 · 1800 Sq Ft (Available)</option>
+              <option disabled>Flat 402 – Floor 4 · 1815 Sq Ft (Sold Out)</option>
+              <option>Flat 501 – Floor 5 · 1800 Sq Ft (Available)</option>
+              <option>Flat 502 – Floor 5 · 1815 Sq Ft (Available)</option>
+              <option>Any Available Residence</option>
+            </select>
+          </div>
+          <div class="cf-row"><label>Message</label><textarea name="message" placeholder="Any questions or preferred visit time…"></textarea></div>
+          <button type="submit" class="cf-submit">Send Enquiry →</button>
+          <p class="cf-note">Your information is kept confidential</p>
+        </form>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
+<!-- WHATSAPP FLOATING BUTTON -->
+<div class="whatsapp-float-label">💬 Chat on WhatsApp</div>
+<a href="https://wa.me/919175997600?text=Hello%2C%20I%20am%20interested%20in%20Royal%20Crest%20Apartments.%20Please%20share%20more%20details." target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="32" height="32">
+    <path fill="#fff" d="M4.9 43.3l2.7-9.9C5.9 30.7 5 27.4 5 24 5 13.5 13.5 5 24 5s19 8.5 19 19-8.5 19-19 19c-3.3 0-6.4-.8-9.1-2.3L4.9 43.3z"/>
+    <path fill="#25D366" d="M24 7c-9.4 0-17 7.6-17 17 0 3.1.8 6 2.3 8.6L7 43l10.6-2.3C20 42.2 22 43 24 43c9.4 0 17-7.6 17-17S33.4 7 24 7z"/>
+    <path fill="#fff" d="M35.2 31.2c-.4 1.1-2.1 2.1-2.9 2.2-.8.1-1.5.4-5.1-1.1-4.3-1.7-7-6.1-7.2-6.4-.2-.3-1.7-2.3-1.7-4.4s1.1-3.1 1.5-3.5c.4-.4.8-.5 1.1-.5h.8c.3 0 .6.1.9.7.4.9 1.3 3.1 1.4 3.3.1.2.2.5 0 .8-.2.3-.3.5-.5.7-.2.2-.5.5-.3.9.2.4 1 1.7 2.2 2.8 1.5 1.3 2.7 1.8 3.1 2 .4.2.7.2.9-.1.3-.3 1.1-1.3 1.4-1.7.3-.4.6-.3 1-.1.4.2 2.6 1.2 3 1.4.4.2.7.3.8.5.1.2.1 1.2-.3 2.4z"/>
+  </svg>
+</a>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-logo" style="display:flex;align-items:center;gap:12px;">
@@ -737,13 +842,38 @@ function filterFlats(floor, btn) {
 }
 
 // Submit
-function handleSubmit(btn) {
-  btn.textContent = '✓ Enquiry Received';
-  btn.style.background = '#1a6b3c';
-  setTimeout(() => {
-    btn.textContent = 'Send Enquiry →';
-    btn.style.background = '';
-  }, 3500);
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.cf-submit');
+  btn.textContent = 'Sending...';
+  btn.style.background = '#a88535';
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      btn.textContent = '✓ Enquiry Sent!';
+      btn.style.background = '#1a6b3c';
+      form.reset();
+      setTimeout(() => {
+        btn.textContent = 'Send Enquiry →';
+        btn.style.background = '';
+      }, 4000);
+    } else {
+      btn.textContent = 'Error — Try Again';
+      btn.style.background = '#c0392b';
+      setTimeout(() => {
+        btn.textContent = 'Send Enquiry →';
+        btn.style.background = '';
+      }, 3000);
+    }
+  } catch {
+    btn.textContent = 'Error — Try Again';
+    btn.style.background = '#c0392b';
+  }
 }
 </script>
 </body>
